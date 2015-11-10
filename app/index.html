@@ -15,8 +15,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="generator" content="Polymer Starter Kit" />
-  <title>Polymer Starter Kit</title>
+  <meta name="generator" content="Yjs" />
+  <title>Yjs</title>
   <!-- Place favicon.ico in the `app/` directory -->
 
   <!-- Chrome for Android theme color -->
@@ -36,7 +36,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <meta name="apple-mobile-web-app-title" content="Yjs">
   <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
   <!-- Tile icon for Win8 (144x144) -->
@@ -99,9 +99,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Blog</span>
           </a>
 
-          <a data-route="contact" href="/wiki" on-click="onDataRouteClick">
+          <a href="https://github.com/y-js/yjs/wiki" target="_blank">
             <iron-icon icon="icons:explore"></iron-icon>
             <span>Wiki</span>
+          </a>
+          <a href="https://gitter.im/y-js/yjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge" target="_blank">
+            <img src="https://badges.gitter.im/Join%20Chat.svg"></img>
           </a>
         </paper-menu>
       </paper-header-panel>
@@ -140,6 +143,45 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   handle-as="text"
                   last-response="{{yjsLicense}}"></iron-ajax>
                 <mark-down class="card-content" text="{{yjsLicense}}"></mark-down>
+              </paper-card>
+            </section>
+
+            <section data-route="examples">
+              <paper-card elevation="1" heading="Collaborative Text Editing">
+
+                <style>
+                  .code-overlay {
+                    position: absolute;
+                    top: 66px;
+                    right: 0;
+                    left: 0;
+                    margin: 5px;
+                    background: #fff;
+                  }
+                  .code-overlay mark-down {
+                    font-size: 70%;
+                  }
+                </style>
+                <paper-dialog class="code-overlay" entry-animation="scale-up-animation"
+                              exit-animation="fade-out-animation" opened="{{examplesTextBindSource}}">
+                  <paper-dialog-scrollable>
+                    <mark-down text="```
+{{examplesTextBindSourceCode}}
+```"></mark-down>
+                  </paper-dialog-scrollable>
+                </paper-dialog>
+                <iron-ajax
+                  auto
+                  url="/bower_components/yjs/Examples/OfflineEditing/index.js"
+                  handle-as="text"
+                  last-response="{{examplesTextBindSourceCode}}"></iron-ajax>
+                <paper-fab icon="code" class="card-action" toggles="true" active="{{examplesTextBindSource}}"></paper-fab>
+                <div class="card-content">
+                  <h1 id="contenteditable" contentEditable></h1>
+                  <textarea style="width:100%;" rows=20 id="textfield"></textarea>
+                </div>
+
+                <script src="/bower_components/yjs/Examples/OfflineEditing/index.js"></script>
               </paper-card>
             </section>
 
