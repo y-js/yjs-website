@@ -79,22 +79,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>About</span>
           </a>
 
-          <a data-route="users" href="/examples" on-click="onDataRouteClick">
+          <a data-route="examples" href="/examples" on-click="onDataRouteClick">
             <iron-icon icon="image:color-lens"></iron-icon>
             <span>Examples</span>
           </a>
 
-          <a data-route="contact" href="/tutorial" on-click="onDataRouteClick">
+          <a data-route="tutorial" href="/tutorial" on-click="onDataRouteClick">
             <iron-icon icon="maps:directions"></iron-icon>
             <span>Tutorial</span>
           </a>
 
-          <a data-route="contact" href="/modules" on-click="onDataRouteClick">
+          <a data-route="modules" href="/modules" on-click="onDataRouteClick">
             <iron-icon icon="icons:view-module"></iron-icon>
             <span>Modules</span>
           </a>
 
-          <a data-route="contact" href="/Blog" on-click="onDataRouteClick">
+          <a data-route="blog" href="/blog" on-click="onDataRouteClick">
             <iron-icon icon="av:library-books"></iron-icon>
             <span>Blog</span>
           </a>
@@ -103,6 +103,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <iron-icon icon="icons:explore"></iron-icon>
             <span>Wiki</span>
           </a>
+
           <a href="https://gitter.im/y-js/yjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge" target="_blank">
             <img src="https://badges.gitter.im/Join%20Chat.svg"></img>
           </a>
@@ -163,7 +164,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   }
                 </style>
                 <paper-dialog class="code-overlay" entry-animation="scale-up-animation"
-                              exit-animation="fade-out-animation" opened="{{examplesTextBindSource}}">
+                              exit-animation="scale-down-animation" opened="{{examplesTextBindSource}}">
                   <paper-dialog-scrollable>
                     <mark-down text="```
 {{examplesTextBindSourceCode}}
