@@ -92,6 +92,20 @@ var optimizeHtmlTask = function (src, dest) {
     .pipe($.size({title: 'html'}));
 };
 
+
+gulp.task('watch:yjs', function () {
+  var distfiles = ['../yjs/dist/**/*', '../y-*/dist/**/*']
+  gulp.src(distfiles, {base: '..'})
+    .pipe($.watch(distfiles))
+    .pipe($.rename(function (path) {
+      var dir = path.dirname.split('/')
+      dir.splice(1, 1)
+      path.dirname = dir.join('/')
+    }))
+    .pipe(gulp.dest('./bower_components/'))
+})
+
+
 // Compile and automatically prefix stylesheets
 gulp.task('styles', function () {
   return styleTask('styles', ['**/*.css']);
