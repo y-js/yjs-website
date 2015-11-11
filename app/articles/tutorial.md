@@ -5,7 +5,7 @@ This tutorial will give you a good idea on how you can work with Yjs. For detail
 Furthermore, you are encouraged to try out everything you find here in your browser console. Try to tinker with some of the examples. If you have any problems, ask a question in the comments section at the bottom of this page.
 
 ### Prerequisites
-Yjs expects that you have a Promise/A+ implementation on the window/global object. Though this has been [specified in ECMASrcipt 2015](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) not all browser support it yet. If you don't know which Promise implementation to include, check out the [es6-promise polyfill](https://github.com/jakearchibald/es6-promise).
+Yjs expects that you have a Promise/A+ implementation on the window/global object. Though this has been [specified in ECMASrcipt 2015](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) not all browser support it yet. You can include any Promise/A+ compatible implementation. If you don't know which one to include, check out the [es6-promise polyfill](https://github.com/jakearchibald/es6-promise).
 
 Yjs is tested on nodejs >= `0.10`. But in order to use it you have to enable harmony support for nodejs < `4.0.0` like this:
 ```
