@@ -24,8 +24,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
 
   app.blogposts = [
-    createBlogpostDefinition("10 February 2015", "Yjs Release 0.4"),
-    createBlogpostDefinition("13 May 2015", "Yjs Release 0.5")
+    createBlogpostDefinition("13 May 2015", "Yjs Release 0.5"),
+    createBlogpostDefinition("10 February 2015", "Yjs Release 0.4")
   ]
 
   app.blogpostUrlToName = function blogpostUrlToName (url) {
@@ -88,5 +88,87 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   app.scrollPageToTop = function() {
     document.getElementById('mainContainer').scrollTop = 0;
   };
+
+  app.topologyTotal = {
+    "nodes":[
+      {"name":"Client 1","group":1},
+      {"name":"Client 2","group":2},
+      {"name":"Client 3","group":3},
+      {"name":"Client 4","group":4},
+      {"name":"Client 5","group":5},
+      {"name":"Client 6","group":6}
+    ],
+    "links":[
+      {"source":0,"target":0},
+      {"source":0,"target":1},
+      {"source":0,"target":2},
+      {"source":0,"target":3},
+      {"source":0,"target":4},
+      {"source":0,"target":5},
+
+      {"source":1,"target":1},
+      {"source":1,"target":2},
+      {"source":1,"target":3},
+      {"source":1,"target":4},
+      {"source":1,"target":5},
+
+      {"source":2,"target":2},
+      {"source":2,"target":3},
+      {"source":2,"target":4},
+      {"source":2,"target":5},
+
+      {"source":3,"target":3},
+      {"source":3,"target":4},
+      {"source":3,"target":5},
+
+      {"source":4,"target":4},
+      {"source":4,"target":5}
+    ]
+  }
+  app.topologyStar = {
+    "nodes":[
+      {"name":"Server","group":1},
+      {"name":"Client 1","group":0},
+      {"name":"Client 2","group":0},
+      {"name":"Client 3","group":0},
+      {"name":"Client 4","group":0},
+      {"name":"Client 5","group":0},
+      {"name":"Client 6","group":0}
+    ],
+    "links":[
+      {"source":0,"target":1},
+      {"source":0,"target":2},
+      {"source":0,"target":3},
+      {"source":0,"target":4},
+      {"source":0,"target":5},
+      {"source":0,"target":6}
+    ]
+  }
+
+  app.topologyFederated = {
+    "nodes":[
+      {"name":"XMPP Server","group":1}, // 0
+      {"name":"XMPP Server","group":2}, // 1
+      {"name":"XMPP Server","group":3}, // 2
+      {"name":"Client","group":0}, // 3
+      {"name":"Client","group":0}, // 4
+      {"name":"Client","group":0}, // 5
+      {"name":"Client","group":0}, // 6
+      {"name":"Client","group":0}, // 7
+      {"name":"Client","group":0}  // 8
+    ],
+    "links":[
+      {"source":0,"target":3},
+      {"source":0,"target":4},
+      {"source":1,"target":5},
+      {"source":2,"target":6},
+      {"source":2,"target":7},
+      {"source":2,"target":8},
+
+      {"source":0,"target":1},
+      {"source":0,"target":2},
+      {"source":1,"target":2}
+    ]
+  }
 
 })(document);

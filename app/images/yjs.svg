@@ -14,8 +14,11 @@
    height="54.24408"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="yjs.svg">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="yjs.svg"
+   inkscape:export-filename="/home/dmonad/git/yjs-website/app/favicon.ico"
+   inkscape:export-xdpi="53.577412"
+   inkscape:export-ydpi="53.577412">
   <defs
      id="defs4">
     <linearGradient
@@ -37,7 +40,8 @@
        y1="517.73895"
        x2="129.67833"
        y2="523.16852"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,0.25)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -47,22 +51,23 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.919596"
-     inkscape:cx="21.067629"
+     inkscape:cx="-0.1455743"
      inkscape:cy="40.074302"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="1002"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     showborder="true"
-     borderlayer="false" />
+     showborder="false"
+     borderlayer="false"
+     inkscape:showpageshadow="false" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -71,7 +76,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -82,27 +87,27 @@
      transform="translate(-113.49802,-500.95471)">
     <text
        xml:space="preserve"
-       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient2995);fill-opacity:1;stroke:none;font-family:Century Gothic;-inkscape-font-specification:Century Gothic"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:72px;line-height:125%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient2995);fill-opacity:1;stroke:none"
        x="112.12693"
-       y="539.20471"
+       y="539.45471"
        id="text2985"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan2987"
          x="112.12693"
-         y="539.20471"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:url(#linearGradient2995);fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic">y</tspan></text>
+         y="539.45471"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Verdana;-inkscape-font-specification:Verdana;fill:url(#linearGradient2995);fill-opacity:1">y</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:36px;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#7f7f7f;fill-opacity:1;stroke:none;font-family:MoolBoran;-inkscape-font-specification:MoolBoran Oblique"
-       x="134.80464"
-       y="545.6991"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:125%;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';letter-spacing:0px;word-spacing:0px;fill:#7f7f7f;fill-opacity:1;stroke:none"
+       x="135.68852"
+       y="545.19397"
        id="text3765"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3767"
-         x="134.80464"
-         y="545.6991"
-         style="font-size:36px;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#7f7f7f;fill-opacity:1;font-family:MoolBoran;-inkscape-font-specification:MoolBoran Oblique">js</tspan></text>
+         x="135.68852"
+         y="545.19397"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';fill:#7f7f7f;fill-opacity:1">js</tspan></text>
   </g>
 </svg>

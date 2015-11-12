@@ -1,6 +1,6 @@
 
 
-In this tutorial we will introduce the basics of Yjs, and we will showcase how to create a collaborative text area. We will use the websockets protocol to share changes, and we will use an in-memory database to persist the data. But note: there are various other options to communicate, and persist changes. You find a list of all the Yjs modules, and more information about Yjs in the [github wiki](https://github.com/y-js/yjs/wiki).
+In this tutorial we will introduce the basics of Yjs, and we will showcase how to create a collaborative text area. We will use the websockets protocol to share changes, and we will use an in-memory database to persist the data. But note: there are various other options to communicate, and persist changes. Check out the [modules section](/modules) in order to find out about all the options you have!
 
 Furthermore, you are encouraged to try out everything you find here in your browser console. Try to tinker with some of the examples. If you have any problems drop a question via [gitter](https://gitter.im/y-js/yjs).
 

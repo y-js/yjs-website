@@ -1,0 +1,91 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<style>
+  .node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+  }
+  .link {
+  stroke: #999;
+  stroke-opacity: .6;
+  }
+</style>
+
+<dom-module id="app-forcegraph">
+  <template>
+    <div id="forcegraph"></div>
+  </template>
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'app-forcegraph',
+      ready: function () {
+        if (this.graph == null) {
+          throw new Error("You must specify a graph property!")
+        }
+        var width = 300,
+            height = 90;
+        var graph = this.graph
+
+        var color = d3.scale.category20();
+
+        var force = d3.layout.force()
+          .charge(-50)
+          .linkDistance(20)
+          .size([width, height]);
+
+        var svg = d3.select(this.$.forcegraph).append("svg")
+          .attr("viewBox", "0 0 "+width+" "+height)
+
+        force
+            .nodes(graph.nodes)
+            .links(graph.links)
+            .start();
+
+        var link = svg.selectAll(".link")
+            .data(graph.links)
+          .enter().append("line")
+            .attr("class", "link")
+            .style("stroke-width", function(d) { return 1 });
+
+        var node = svg.selectAll(".node")
+            .data(graph.nodes)
+          .enter().append("circle")
+            .attr("class", "node")
+            .attr("r", 5)
+            .style("fill", function(d) { return color(d.group); })
+            .call(force.drag);
+
+        node.append("title")
+            .text(function(d) { return d.name; });
+
+        force.on("tick", function() {
+          link.attr("x1", function(d) { return d.source.x; })
+              .attr("y1", function(d) { return d.source.y; })
+              .attr("x2", function(d) { return d.target.x; })
+              .attr("y2", function(d) { return d.target.y; });
+
+          node.attr("cx", function(d) { return d.x; })
+              .attr("cy", function(d) { return d.y; });
+        });
+      },
+      properties: {
+        graph: {
+          type: Object
+        }
+      }
+    });
+  })();
+  </script>
+</dom-module>

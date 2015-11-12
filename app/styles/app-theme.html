@@ -156,10 +156,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     transform-origin: left center;
   }
 
-  .main-panel .content {
-    padding: 0 64px 0 4px;
-  }
-
   .main-panel {
     background-color: #fff;
   }
@@ -170,9 +166,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     };
   }
 
-  .main-panel[mode=cover] paper-material, paper-card {
+  .main-panel paper-material, paper-card {
     max-width: 640px;
-    margin: 64px auto;
+    margin: 50px auto;
   }
 
   #mainToolbar .middle-container  {
@@ -195,6 +191,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   /* Height of the scroll area */
   .content {
     height: 900px;
+    max-width: 800px;
   }
 
   /* Breakpoints */
@@ -204,9 +201,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     paper-material, paper-card {
       --menu-container-display: none;
-      width: calc(97.33% - 32px);
+      width: calc(100% - 24px);
       padding-left: 16px;
       padding-right: 16px;
+    }
+
+    .main-panel {
+      --paper-header-panel-cover-container: {
+        left: 24px;
+      };
     }
 
     paper-toolbar.tall .app-name {
@@ -225,7 +228,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .bg {
       background: white;
     }
-
   }
 
   /* Tablet+ */
@@ -236,6 +238,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin-bottom: 32px;
       padding-left: 30px;
       padding-right: 30px;
+    }
+
+    .main-panel paper-material, paper-card {
+      margin: 64px auto;
     }
 
     #drawer.paper-drawer-panel > [drawer] {

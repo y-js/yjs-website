@@ -16,3 +16,10 @@ body {
 ul {
   padding-left: 1.3em;
 }
+
+/* TODO:!!! */
+@media (max-width: 600px) {
+  #mainContainer {
+    top: 100px !important;
+  }
+}
