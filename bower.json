@@ -2,13 +2,14 @@
   "name": "polymer-starter-kit",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.1.0",
+    "d3": "~3.5.8",
     "iron-elements": "PolymerElements/iron-elements#^1.0.0",
-    "paper-elements": "PolymerElements/paper-elements#^1.0.1",
-    "platinum-elements": "PolymerElements/platinum-elements#^1.1.0",
+    "mark-down": "robdodson/mark-down#~1.0.0",
     "neon-elements": "PolymerElements/neon-elements#^1.0.0",
     "page": "visionmedia/page.js#~1.6.3",
-    "mark-down": "robdodson/mark-down#~1.0.0"
+    "paper-elements": "PolymerElements/paper-elements#^1.0.1",
+    "platinum-elements": "PolymerElements/platinum-elements#^1.1.0",
+    "polymer": "Polymer/polymer#^1.1.0"
   },
   "devDependencies": {
     "web-component-tester": "*",

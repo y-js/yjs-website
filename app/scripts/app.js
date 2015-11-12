@@ -15,6 +15,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
 
+  function createBlogpostDefinition (date, name) {
+    return {
+      date: date,
+      url: '/article/' + name + '.md',
+      title: name
+    }
+  }
+
+  app.blogposts = [
+    createBlogpostDefinition("10 February 2015", "Yjs Release 0.4"),
+    createBlogpostDefinition("13 May 2015", "Yjs Release 0.5")
+  ]
+
+  app.blogpostUrlToName = function blogpostUrlToName (url) {
+    url = url.split('/')
+    return url[url.length - 1].slice(0, -3)
+  }
+
   app.displayInstalledToast = function() {
     // Check to make sure caching is actually enabled—it won't be in the dev environment.
     if (!document.querySelector('platinum-sw-cache').disabled) {

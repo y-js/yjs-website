@@ -147,6 +147,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-card>
             </section>
 
+            <section data-route="article">
+              <paper-card elevation="1" heading="{{blogpostUrlToName(articleUrl)}}">
+                <iron-ajax
+                  auto
+                  url="{{articleUrl}}"
+                  handle-as="text"
+                  last-response="{{articleMd}}"></iron-ajax>
+                <mark-down class="card-content" text="{{articleMd}}"></mark-down>
+              </paper-card>
+            </section>
+
             <section data-route="examples">
               <paper-card elevation="1" heading="Collaborative Text Editing">
 
@@ -194,8 +205,178 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <mark-down class="card-content" text="{{tutorialMd}}"></mark-down>
               </paper-card>
             </section>
+            <section data-route="blog">
+              <paper-card elevation="1" heading="Blog posts">
+                <style>
+                .list {
+  padding-top: 12px;
+  background-color: white;
+  display: inline-block;
+  width: 240px;
+  height: 228px;
+  margin: 12px;
+  @apply(--shadow-elevation-2dp);
+}
+                </style>
+                <div class="list" role="listbox">
+                  <template is="dom-repeat" items="{{blogposts}}">
+                    <a href="{{item.url}}">
+                      <paper-item>
+                        <paper-item-body two-line class="layout vertical">
+                          <div>{{item.title}}</div>
+                          <div secondary>{{item.date}}</div>
+                        </paper-item-body>
+                      </paper-item>
+                    </a>
+                  </template>
+                </div>
+              </paper-card>
+            </section>
             <section data-route="modules">
               <paper-card elevation="1" heading="y-webrtc">
+              <style>
+
+.node {
+stroke: #fff;
+stroke-width: 1.5px;
+}
+
+.link {
+stroke: #999;
+stroke-opacity: .6;
+}
+
+</style>
+<div id="webrtc-connector-graphic"></div>
+<script>
+var graph = {
+  "nodes":[
+    {"name":"Client 1","group":1},
+    {"name":"Client 2","group":2},
+    {"name":"Client 3","group":3},
+    {"name":"Client 4","group":4},
+    {"name":"Client 5","group":5},
+    {"name":"Client 6","group":6}
+  ],
+  "links":[
+    {"source":0,"target":0},
+    {"source":0,"target":1},
+    {"source":0,"target":2},
+    {"source":0,"target":3},
+    {"source":0,"target":4},
+    {"source":0,"target":5},
+
+    {"source":1,"target":1},
+    {"source":1,"target":2},
+    {"source":1,"target":3},
+    {"source":1,"target":4},
+    {"source":1,"target":5},
+
+    {"source":2,"target":2},
+    {"source":2,"target":3},
+    {"source":2,"target":4},
+    {"source":2,"target":5},
+
+    {"source":3,"target":3},
+    {"source":3,"target":4},
+    {"source":3,"target":5},
+
+    {"source":4,"target":4},
+    {"source":4,"target":5}
+  ]
+}
+graph = {
+  "nodes":[
+    {"name":"Server","group":1},
+    {"name":"Client 1","group":0},
+    {"name":"Client 2","group":0},
+    {"name":"Client 3","group":0},
+    {"name":"Client 4","group":0},
+    {"name":"Client 5","group":0},
+    {"name":"Client 6","group":0}
+  ],
+  "links":[
+    {"source":0,"target":1},
+    {"source":0,"target":2},
+    {"source":0,"target":3},
+    {"source":0,"target":4},
+    {"source":0,"target":5},
+    {"source":0,"target":6}
+  ]
+}
+
+graph = {
+  "nodes":[
+    {"name":"Server 1","group":1}, // 0
+    {"name":"Server 2","group":2}, // 1
+    {"name":"Server 3","group":3}, // 2
+    {"name":"Client","group":0}, // 3
+    {"name":"Client","group":0}, // 4
+    {"name":"Client","group":0}, // 5
+    {"name":"Client","group":0}, // 6
+    {"name":"Client","group":0}, // 7
+    {"name":"Client","group":0}  // 8
+  ],
+  "links":[
+    {"source":0,"target":3},
+    {"source":0,"target":4},
+    {"source":1,"target":5},
+    {"source":2,"target":6},
+    {"source":2,"target":7},
+    {"source":2,"target":8},
+
+    {"source":0,"target":1},
+    {"source":0,"target":2},
+    {"source":1,"target":2}
+  ]
+}
+
+var width = 175,
+  height = 70;
+
+var color = d3.scale.category20();
+
+var force = d3.layout.force()
+  .charge(-120)
+  .linkDistance(30)
+  .size([width, height]);
+
+var svg = d3.select("#webrtc-connector-graphic").append("svg")
+  .attr("viewBox", "0 0 175 70")
+
+force
+    .nodes(graph.nodes)
+    .links(graph.links)
+    .start();
+
+var link = svg.selectAll(".link")
+    .data(graph.links)
+  .enter().append("line")
+    .attr("class", "link")
+    .style("stroke-width", function(d) { return 1 });
+
+var node = svg.selectAll(".node")
+    .data(graph.nodes)
+  .enter().append("circle")
+    .attr("class", "node")
+    .attr("r", 5)
+    .style("fill", function(d) { return color(d.group); })
+    .call(force.drag);
+
+node.append("title")
+    .text(function(d) { return d.name; });
+
+force.on("tick", function() {
+  link.attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+
+  node.attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; });
+});
+
+</script>
                 <mark-down class="card-content" style="margin:0;padding:0;">
                   It propagates document updates directly to all users via WebRTC. While WebRTC is not the most reliable connector, messages are propagated with almost no delay.
 
