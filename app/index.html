@@ -111,10 +111,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-header-panel>
 
       <!-- Main Area -->
-      <paper-header-panel class="main-panel" main condenses keep-condensed-header mode="cover">
+      <paper-header-panel class="main-panel" main condenses keep-condensed-header mode="{{getMainMode(_isMobile)}}">
 
         <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar" class="tall">
+        <paper-toolbar id="mainToolbar" class="{{initialToolbarClass}}">
 
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
           <span class="flex"></span>
@@ -123,7 +123,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Main Content -->
         <div class="content">
-          <a href="https://github.com/y-js/yjs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+          <template is="dom-if" if="{{!_isMobile}}">
+            <a href="https://github.com/y-js/yjs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+          </template>
 
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
@@ -192,7 +194,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <textarea style="width:100%;" rows=20 id="textfield"></textarea>
                 </div>
 
-                <script>{{examplesTextBindSourceCode}}</script>
+                <script src="bower_components/yjs/Examples/OfflineEditing/index.js"></script>
               </paper-card>
             </section>
             <section data-route="tutorial">
@@ -459,6 +461,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </platinum-sw-cache>
     </platinum-sw-register>
     -->
+
+    <iron-media-query id="mobile-media-query" query="(max-width: 820px)" query-matches="{{_isMobile}}"></iron-media-query>
 
   </template>
 

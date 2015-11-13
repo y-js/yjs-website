@@ -44,6 +44,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function() {
     console.log('Our app is ready to rock!');
+    var t = document.getElementById('mainToolbar')
+    if (app._isMobile) {
+      t.classList.remove('tall')
+    } else {
+      t.classList.add('tall')
+    }
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
@@ -88,6 +94,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   app.scrollPageToTop = function() {
     document.getElementById('mainContainer').scrollTop = 0;
   };
+
+
+  app.getMainMode = function (isMobile) {
+    return isMobile ? 'seamed' : 'cover'
+  }
+
+  app.properties._isMobile = {
+    type: String,
+    notify: true,
+    observer: 'setMainToolbarClass'
+  }
+
+  app.setMainToolbarClass = function (isMobile) {
+    var tb = document.getElementById('mainToolbar')
+    if (tb == null) {
+      app.initialToolbarClass = isMobile ? '' : 'tall'
+      return
+    }
+
+    if (isMobile) {
+      tb.classList.remove('tall')
+    } else {
+      tb.classList.add('tall')
+    }
+  }
 
   app.topologyTotal = {
     "nodes":[
