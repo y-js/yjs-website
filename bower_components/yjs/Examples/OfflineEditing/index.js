@@ -13,7 +13,7 @@ Y({
     debug: true
   },
   types: ['Array', 'Text'],
-  sourceDir: '/bower_components'
+  sourceDir: 'bower_components'
 }).then(function (yconfig) {
   // yconfig holds all the information about the shared object
   window.yconfig = yconfig
