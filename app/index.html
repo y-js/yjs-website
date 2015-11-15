@@ -69,7 +69,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Toolbar -->
         <paper-toolbar id="drawerToolbar">
-          <img src="/images/yjs.png" style="margin: 0px auto; height: 80%;"></img>
+          <img src="images/yjs.png" style="margin: 0px auto; height: 80%;"></img>
         </paper-toolbar>
 
         <!-- Drawer Content -->
@@ -133,7 +133,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-card elevation="1">
                 <iron-ajax
                   auto
-                  url="/bower_components/yjs/README.md"
+                  url="bower_components/yjs/README.md"
                   handle-as="text"
                   last-response="{{yjsReadme}}"></iron-ajax>
                 <mark-down class="card-content" text="{{yjsReadme}}"></mark-down>
@@ -142,7 +142,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-card elevation="1" heading="Yjs License">
                 <iron-ajax
                   auto
-                  url="/bower_components/yjs/LICENSE"
+                  url="bower_components/yjs/LICENSE"
                   handle-as="text"
                   last-response="{{yjsLicense}}"></iron-ajax>
                 <mark-down class="card-content" text="{{yjsLicense}}"></mark-down>
@@ -186,7 +186,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </paper-dialog>
                 <iron-ajax
                   auto
-                  url="/bower_components/yjs/Examples/OfflineEditing/index.js"
+                  url="bower_components/yjs/Examples/OfflineEditing/index.js"
                   handle-as="text"
                   last-response="{{examplesTextBindSourceCode}}"></iron-ajax>
                 <paper-fab icon="code" class="card-action" toggles="true" active="{{examplesTextBindSource}}"></paper-fab>
@@ -201,7 +201,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-card elevation="1" heading="Tutorial">
                 <iron-ajax
                   auto
-                  url="/articles/tutorial.md"
+                  url="articles/tutorial.md"
                   handle-as="text"
                   last-response="{{tutorialMd}}"></iron-ajax>
                 <mark-down class="card-content" text="{{tutorialMd}}"></mark-down>
@@ -237,7 +237,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <section data-route="modules">
               <paper-card elevation="1" heading="Webrtc Connector">
                 <a href="https://github.com/y-js/y-webrtc" target="_blank">
-                  <paper-fab src="/images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
 
                 <app-forcegraph graph="{{topologyTotal}}"></app-forcegraph>
@@ -254,7 +254,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-card>
               <paper-card elevation="1" heading="Websockets Connector">
                 <a href="https://github.com/y-js/y-websockets-client" target="_blank">
-                  <paper-fab src="/images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <app-forcegraph graph="{{topologyStar}}"></app-forcegraph>
                 <mark-down class="card-content" style="margin:0;padding:0;">
@@ -273,7 +273,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-card>
               <paper-card elevation="1" heading="Xmpp Connector">
                 <a href="https://github.com/y-js/y-xmpp" target="_blank">
-                  <paper-fab src="/images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <app-forcegraph graph="{{topologyFederated}}"></app-forcegraph>
                 <mark-down class="card-content" style="margin:0;padding:0;">
@@ -288,7 +288,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
               <paper-card elevation="1" heading="IndexedDB Database Adapter">
                 <a href="https://github.com/y-js/y-indexeddb" target="_blank">
-                  <paper-fab src="/images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <mark-down class="card-content" style="margin:0;padding:0;">
                   Use the IndexedDB database adapter to store your shared data
@@ -304,7 +304,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
               <paper-card elevation="1" heading="Memory Database Adapter">
                 <a href="https://github.com/y-js/y-memory" target="_blank">
-                  <paper-fab src="/images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <mark-down class="card-content" style="margin:0;padding:0;">
                   Use the Memory database adapter to store your shared data
@@ -318,7 +318,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
               <paper-card elevation="1" heading="Y.Map Type">
                 <a href="https://github.com/y-js/yjs" target="_blank">
-                  <paper-fab src="/images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <mark-down class="card-content" style="margin:0;padding:0;">
                   Use the Y.Map type to map key-value pairs.
@@ -339,7 +339,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-card>
               <paper-card elevation="1" heading="Y.Array Type">
                 <a href="https://github.com/y-js/y-array" target="_blank">
-                  <paper-fab src="/images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <mark-down class="card-content" style="margin:0;padding:0;">
                   Use the Y.Array type to handle shared lists of data.
@@ -362,7 +362,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-card>
               <paper-card elevation="1" heading="Y.Text Type">
                 <a href="https://github.com/y-js/y-text" target="_blank">
-                  <paper-fab src="/images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <mark-down class="card-content" style="margin:0;padding:0;">
                   Use the Y.Text type to share text content, and bind it to
@@ -379,7 +379,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
               <paper-card elevation="1" heading="Y.RichText Type">
                 <a href="https://github.com/y-js/y-richtext" target="_blank">
-                  <paper-fab src="/images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <mark-down class="card-content" style="margin:0;padding:0;">
                   Use the Y.RichText type to share rich text, and bind it to
@@ -398,7 +398,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
               <paper-card elevation="1" heading="Y.Selections Type">
                 <a href="https://github.com/y-js/y-selections" target="_blank">
-                  <paper-fab src="/images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <mark-down class="card-content" style="margin:0;padding:0;">
                   Use the Y.Selections type to share selections on Y.Array types.
@@ -420,7 +420,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
               <paper-card elevation="1" heading="Y.Xml Type">
                 <a href="https://github.com/y-js/y-xml" target="_blank">
-                  <paper-fab src="/images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <mark-down class="card-content" style="margin:0;padding:0;">
                   Use the Y.Xml type to share XML content, and bind it to

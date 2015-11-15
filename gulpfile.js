@@ -92,6 +92,11 @@ var optimizeHtmlTask = function (src, dest) {
     .pipe($.size({title: 'html'}))
 }
 
+gulp.task('deploy', [], function() {
+  return gulp.src('./dist/**/*')
+    .pipe($.ghPages());
+});
+
 gulp.task('watch:yjs', function () {
   var distfiles = ['../yjs/dist/**/*', '../y-*/dist/**/*']
   gulp.src(distfiles, {base: '..'})
