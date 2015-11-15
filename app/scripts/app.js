@@ -97,7 +97,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
   app.getMainMode = function (isMobile) {
-    return isMobile ? 'seamed' : 'cover'
+    return isMobile ? 'scroll' : 'cover'
   }
 
   app.properties._isMobile = {

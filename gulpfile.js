@@ -234,6 +234,7 @@ gulp.task('clean', function (cb) {
 gulp.task('serve', ['styles', 'elements', 'images'], function () {
   browserSync({
     port: 5000,
+    ghostMode: false,
     notify: false,
     logPrefix: 'PSK',
     snippetOptions: {
