@@ -1,0 +1,45 @@
+{
+  "name": "yjs",
+  "version": "0.6.40",
+  "description": "A framework for real-time p2p shared editing on arbitrary complex data types",
+  "main": "y.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/standard"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "build/**",
+      "dist/**",
+      "./y.js",
+      "./y.js.map"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/y-js/yjs.git"
+  },
+  "keywords": [
+    "OT",
+    "Operational Transformation",
+    "collaboration",
+    "synchronization",
+    "ShareJs",
+    "OpenCoweb",
+    "concurrency"
+  ],
+  "author": "Kevin Jahns",
+  "email": "kevin.jahns@rwth-aachen.de",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/y-js/yjs/issues"
+  },
+  "homepage": "http://y-js.org",
+  "devDependencies": {
+    "pre-commit": "^1.1.1",
+    "standard": "^5.2.2"
+  }
+}
