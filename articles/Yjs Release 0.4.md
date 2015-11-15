@@ -9,7 +9,7 @@ It turned out that Yatta is japanese for "I did it!". It really seemed to be a n
 In the source code I often prefixed variables that belong to the framework with an "Y" - e.g. YString, and YArray for classes and yMemeList for instanziated classes. This can really help you to distinguish shared types and ordinary types. [Petru](http://dbis.rwth-aachen.de/cms/staff/nicolaescu) had the idea that Y can represent the merging of two branches (automatic conflict resolution). This is also represented in our logo:
 
 <div align="center">
-<img style="height:5em;width:auto" src="/images/yjs.png" />
+<img style="height:5em;width:auto" src="images/yjs.png" />
 </div>
 
 Besides from renaming the Framework, I also created an abstract connector definition that handles the sync process. The initial problem was that creating a new connector type is quite difficult: You have to know how operations are applied in the Yjs framework, and you have to come up with an efficient way to synchronize a user with the other users at the beginning of a session. Therefore, I came up with the following sync-models:
