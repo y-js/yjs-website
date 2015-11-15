@@ -179,9 +179,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <paper-dialog class="code-overlay" entry-animation="scale-up-animation"
                               exit-animation="scale-down-animation" opened="{{examplesTextBindSource}}">
                   <paper-dialog-scrollable>
-                    <mark-down text="```
-{{examplesTextBindSourceCode}}
-```"></mark-down>
+                    <mark-down text="```&#10;{{examplesTextBindSourceCode}}&#10;```"></mark-down>
                   </paper-dialog-scrollable>
                 </paper-dialog>
                 <iron-ajax
@@ -241,202 +239,75 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </a>
 
                 <app-forcegraph graph="{{topologyTotal}}"></app-forcegraph>
-                <mark-down class="card-content" style="margin:0;padding:0;">
-                  With the WebRTC connector all users exchange changes directly with each other. While WebRTC is not the most reliable connector, messages are propagated with almost no delay.
-
-                  * Very fast message propagation (not noticeable)
-                  * Very easy to use
-                  * Very little server load (you still have to set up a [signaling server](http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/))
-                  * Not suited for a large amount of collaborators
-                  * WebRTC is not supported in all browsers, and some have troubles communicating with each other
-                  * Works only in the browser
-                </mark-down>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionWebrtc}}"></mark-down>
               </paper-card>
               <paper-card elevation="1" heading="Websockets Connector">
                 <a href="https://github.com/y-js/y-websockets-client" target="_blank">
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <app-forcegraph graph="{{topologyStar}}"></app-forcegraph>
-                <mark-down class="card-content" style="margin:0;padding:0;">
-                  With the websockets connector you can set up a central server that saves changes and communicates with clients.
-                  This option is very similar to other shared editing frameworks that require a central server.
-                  Because the websocket connector is build on top of [socket.io](socket.io), this connector is a rock solid choice
-                  if you require high reliability.
-
-                  * Extremely reliable
-                  * Very easy to use
-                  * Some server load
-                  * You can set up a central server that persists changes
-                  * Falls back to http-communication, if websockets are not supported
-                  * Work with nodejs and in the browser
-                </mark-down>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionWebsockets}}"></mark-down>
               </paper-card>
               <paper-card elevation="1" heading="Xmpp Connector">
                 <a href="https://github.com/y-js/y-xmpp" target="_blank">
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <app-forcegraph graph="{{topologyFederated}}"></app-forcegraph>
-                <mark-down class="card-content" style="margin:0;padding:0;">
-                  XMPP is a well known federated protocol to exchange data. This is definitely an interesting choice if you require high scalability.
-
-                  * Can act as a Connector for a scaling number of users
-                  * Sophisticated Rights Management
-                  * Federated
-                  * Works with nodejs and in the browser
-                </mark-down>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionXmpp}}"></mark-down>
               </paper-card>
 
               <paper-card elevation="1" heading="IndexedDB Database Adapter">
                 <a href="https://github.com/y-js/y-indexeddb" target="_blank">
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
-                <mark-down class="card-content" style="margin:0;padding:0;">
-                  Use the IndexedDB database adapter to store your shared data
-                  persistently in the browser. The next time you join the session,
-                  your changes will still be there.
-
-                  * Minimizes the amount of data exchanged between server and client
-                  * Makes offline editing possible
-                  * Not supported by all browsers
-
-                </mark-down>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionIndexeddb}}"></mark-down>
               </paper-card>
 
               <paper-card elevation="1" heading="Memory Database Adapter">
                 <a href="https://github.com/y-js/y-memory" target="_blank">
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
-                <mark-down class="card-content" style="margin:0;padding:0;">
-                  Use the Memory database adapter to store your shared data
-                  efficiently in-memory. The next time you join the session,
-                  your changes will be lost
-
-                  * Supported by all browsers
-
-                </mark-down>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionMemory}}"></mark-down>
               </paper-card>
 
               <paper-card elevation="1" heading="Y.Map Type">
                 <a href="https://github.com/y-js/yjs" target="_blank">
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
-                <mark-down class="card-content" style="margin:0;padding:0;">
-                  Use the Y.Map type to map key-value pairs.
-                  ```
-                  // Create a new Y.Map type
-                  y.set('new map type', Y.Map).then(function (map) {
-                    // Observe the map type
-                    map.observePath(['my value'], function (value) {
-                      console.log("You created a new value:", value)
-                    })
-                    // Now we create a new property
-                    map.set('my value', 42) // => "You created a new value: 42"
-                    // And retrieve the value
-                    map.get('my value') // => 42
-                  })
-                  ```
-                </mark-down>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionMap}}"></mark-down>
               </paper-card>
               <paper-card elevation="1" heading="Y.Array Type">
                 <a href="https://github.com/y-js/y-array" target="_blank">
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
-                <mark-down class="card-content" style="margin:0;padding:0;">
-                  Use the Y.Array type to handle shared lists of data.
-                  ```
-                  // Create a new Y.Array type
-                  y.set('new array type', Y.Array).then(function (array) {
-                    // Observe the array type
-                    map.observe(function (events) {
-                      for (var i = 0; i < events.length; i++) {
-                        console.log("New event: ", events[i])
-                      }
-                    })
-                    array.insert(0, [1])
-                      // => "New event: {type: "Insert", position: 0, value: 1}"
-                    array.delete(0, 1)
-                      // => "New event: {type: "Delete", position: 0, length: 1}"
-                  })
-                  ```
-                </mark-down>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionArray}}"></mark-down>
               </paper-card>
               <paper-card elevation="1" heading="Y.Text Type">
                 <a href="https://github.com/y-js/y-text" target="_blank">
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
-                <mark-down class="card-content" style="margin:0;padding:0;">
-                  Use the Y.Text type to share text content, and bind it to
-                  arbitrary input elements (E.g. input, textarea, or any element that has the *contenteditable* property)
-                  ```
-                  // Create a new Y.Text type
-                  y.set('new text type', Y.Text).then(function (text) {
-                    // bind text to the first p element that is contenteditable
-                    text.bind(document.querySelector("p[contenteditable]"))
-                  })
-                  ```
-                </mark-down>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionText}}"></mark-down>
               </paper-card>
 
               <paper-card elevation="1" heading="Y.RichText Type">
                 <a href="https://github.com/y-js/y-richtext" target="_blank">
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
-                <mark-down class="card-content" style="margin:0;padding:0;">
-                  Use the Y.RichText type to share rich text, and bind it to
-                  the [quill editor](http://quilljs.com/).
-
-                  **NOTE:** This type is currently migrating and not available in yjs@1.0.*
-                  ```
-                  // Create a new Y.RichText type
-                  y.set('new richtext type', Y.RichText).then(function (richtext) {
-                    // bind richtext to an instance of quill
-                    text.bind(document.querySelector("quill"))
-                  })
-                  ```
-                </mark-down>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionRichtext}}"></mark-down>
               </paper-card>
 
               <paper-card elevation="1" heading="Y.Selections Type">
                 <a href="https://github.com/y-js/y-selections" target="_blank">
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
-                <mark-down class="card-content" style="margin:0;padding:0;">
-                  Use the Y.Selections type to share selections on Y.Array types.
-
-                  **NOTE:** This type is currently migrating and not available in yjs@1.0.*
-                  ```
-                  // Create a new Y.Selections type
-                  y.set('new selections type', Y.Selections).then(function (selections) {
-                    // assign meaning to a selection of an array type
-                    y.get('new array type').then(function (array) {
-                      // select the first two elements and assign "bold" to them
-                      // (You can assign any string to a selection)
-                      selections.select(array, 0, 1, ["bold"])
-                    })
-                  })
-                  ```
-                </mark-down>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionSelections}}"></mark-down>
               </paper-card>
 
               <paper-card elevation="1" heading="Y.Xml Type">
                 <a href="https://github.com/y-js/y-xml" target="_blank">
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
-                <mark-down class="card-content" style="margin:0;padding:0;">
-                  Use the Y.Xml type to share XML content, and bind it to
-                  the the browser DOM to observe the real-time changes
-
-                  **NOTE:** This type is currently migrating and not available in yjs@1.0.*
-                  ```
-                  // Create a new Y.Xml type
-                  y.set('new xml type', Y.Xml).then(function (xml) {
-                    // create a DOM double binding
-                    var shared_dom = xml.getDOM()
-                    // and append it to the body
-                    text.bind(document.body.append(shared_dom))
-                  })
-                  ```
-                </mark-down>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionXml}}"></mark-down>
               </paper-card>
             </section>
           </iron-pages>

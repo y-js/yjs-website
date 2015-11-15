@@ -58,11 +58,11 @@ var jshintTask = function (src) {
 }
 
 var imageOptimizeTask = function (src, dest) {
-  return gulp.src(src)
+  return gulp.src(src)/* TODO!
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
-    })))
+    }))) */
     .pipe(gulp.dest(dest))
     .pipe($.size({title: 'images'}))
 }
@@ -94,7 +94,10 @@ var optimizeHtmlTask = function (src, dest) {
 
 gulp.task('deploy', [], function() {
   return gulp.src('./dist/**/*')
-    .pipe($.ghPages());
+    .pipe($.ghPages({
+      remoteUrl: 'https://github.com/y-js/y-js.github.io.git',
+      branch: 'master'
+    }));
 });
 
 gulp.task('watch:yjs', function () {

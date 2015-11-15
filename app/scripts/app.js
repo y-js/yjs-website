@@ -15,6 +15,131 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
 
+  app.moduleDescriptionWebrtc = "With the WebRTC connector all users exchange changes directly with each other. While WebRTC is not the most reliable connector, messages are propagated with almost no delay.\n\
+\n\
+* Very fast message propagation (not noticeable)\n\
+* Very easy to use\n\
+* Very little server load (you still have to set up a [signaling server](http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/))\n\
+* Not suited for a large amount of collaborators\n\
+* WebRTC is not supported in all browsers, and some have troubles communicating with each other\n\
+* Works only in the browser"
+
+  app.moduleDescriptionWebsockets = "With the websockets connector you can set up a central server that saves changes and communicates with clients.\n\
+This option is very similar to other shared editing frameworks that require a central server.\n\
+Because the websocket connector is build on top of [socket.io](socket.io), this connector is a rock solid choice\n\
+if you require high reliability.\n\
+\n\
+* Extremely reliable\n\
+* Very easy to use\n\
+* Some server load\n\
+* You can set up a central server that persists changes\n\
+* Falls back to http-communication, if websockets are not supported\n\
+* Work with nodejs and in the browser"
+
+  app.moduleDescriptionXmpp = "XMPP is a well known federated protocol to exchange data. This is definitely an interesting choice if you require high scalability.\n\
+\n\
+* Can act as a Connector for a scaling number of users\n\
+* Sophisticated Rights Management\n\
+* Federated\n\
+* Works with nodejs and in the browser"
+
+  app.moduleDescriptionIndexeddb = "Use the IndexedDB database adapter to store your shared data\n\
+persistently in the browser. The next time you join the session,\n\
+your changes will still be there.\n\
+\n\
+* Minimizes the amount of data exchanged between server and client\n\
+* Makes offline editing possible\n\
+* Not supported by all browsers"
+
+  app.moduleDescriptionMemory = "Use the Memory database adapter to store your shared data\n\
+efficiently in-memory. The next time you join the session,\n\
+your changes will be lost\n\
+\n\
+* Supported by all browsers"
+
+  app.moduleDescriptionMap = "Use the Y.Map type to map key-value pairs.\n\
+```\n\
+// Create a new Y.Map type\n\
+y.set('new map type', Y.Map).then(function (map) {\n\
+  // Observe the map type\n\
+  map.observePath(['my value'], function (value) {\n\
+    console.log(\"You created a new value:\", value)\n\
+  })\n\
+  // Now we create a new property\n\
+  map.set('my value', 42) // => \"You created a new value: 42\"\n\
+  // And retrieve the value\n\
+  map.get('my value') // => 42\n\
+})\n\
+```"
+
+  app.moduleDescriptionArray = "Use the Y.Array type to handle shared lists of data.\n\
+```\n\
+// Create a new Y.Array type\n\
+y.set('new array type', Y.Array).then(function (array) {\n\
+  // Observe the array type\n\
+  map.observe(function (events) {\n\
+    for (var i = 0; i < events.length; i++) {\n\
+      console.log(\"New event: \", events[i])\n\
+    }\n\
+  })\n\
+  array.insert(0, [1])\n\
+    // => \"New event: {type: \"Insert\", position: 0, value: 1}\"\
+  array.delete(0, 1)\n\
+    // => \"New event: {type: \"Delete\", position: 0, length: 1}\"\n\
+})\n\
+```"
+
+  app.moduleDescriptionText = "Use the Y.Text type to share text content, and bind it to\n\
+arbitrary input elements (E.g. input, textarea, or any element that has the *contenteditable* property)\n\
+```\n\
+// Create a new Y.Text type\n\
+y.set('new text type', Y.Text).then(function (text) {\n\
+  // bind text to the first p element that is contenteditable\n\
+  text.bind(document.querySelector(\"p[contenteditable]\"))\n\
+})\n\
+```"
+
+  app.moduleDescriptionRichtext = "Use the Y.RichText type to share rich text, and bind it to\n\
+  the [quill editor](http://quilljs.com/).\n\
+\n\
+**NOTE:** This type is currently migrating and not available in yjs@1.0.*\n\
+```\n\
+// Create a new Y.RichText type\n\
+y.set('new richtext type', Y.RichText).then(function (richtext) {\n\
+  // bind richtext to an instance of quill\n\
+  text.bind(document.querySelector(\"quill\"))\n\
+})\n\
+```"
+
+  app.moduleDescriptionSelections = "Use the Y.Selections type to share selections on Y.Array types.\n\
+\n\
+**NOTE:** This type is currently migrating and not available in yjs@1.0.*\n\
+```\n\
+// Create a new Y.Selections type\n\
+y.set('new selections type', Y.Selections).then(function (selections) {\n\
+  // assign meaning to a selection of an array type\n\
+  y.get('new array type').then(function (array) {\n\
+    // select the first two elements and assign \"bold\" to them\n\
+    // (You can assign any string to a selection)\n\
+    selections.select(array, 0, 1, [\"bold\"])\n\
+  })\n\
+})\n\
+```"
+
+  app.moduleDescriptionXml = "Use the Y.Xml type to share XML content, and bind it to\n\
+the the browser DOM to observe the real-time changes\n\
+\n\
+**NOTE:** This type is currently migrating and not available in yjs@1.0.*\n\
+```\n\
+// Create a new Y.Xml type\n\
+y.set('new xml type', Y.Xml).then(function (xml) {\n\
+  // create a DOM double binding\n\
+  var shared_dom = xml.getDOM()\n\
+  // and append it to the body\n\
+  text.bind(document.body.append(shared_dom))\n\
+})\n\
+```"
+
   function createBlogpostDefinition (date, name) {
     return {
       date: date,
