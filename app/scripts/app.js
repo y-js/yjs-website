@@ -149,6 +149,7 @@ y.set('new xml type', Y.Xml).then(function (xml) {\n\
   }
 
   app.blogposts = [
+    createBlogpostDefinition("19 November 2015", "Yjs Release 0.6"),
     createBlogpostDefinition("13 May 2015", "Yjs Release 0.5"),
     createBlogpostDefinition("10 February 2015", "Yjs Release 0.4")
   ]
