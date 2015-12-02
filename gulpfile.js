@@ -92,13 +92,13 @@ var optimizeHtmlTask = function (src, dest) {
     .pipe($.size({title: 'html'}))
 }
 
-gulp.task('deploy', [], function() {
+gulp.task('deploy', [], function () {
   return gulp.src('./dist/**/*')
     .pipe($.ghPages({
       remoteUrl: 'https://github.com/y-js/y-js.github.io.git',
       branch: 'master'
-    }));
-});
+    }))
+})
 
 gulp.task('watch:yjs', function () {
   var distfiles = ['../yjs/dist/**/*', '../y-*/dist/**/*']
