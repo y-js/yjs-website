@@ -60,7 +60,7 @@ your changes will be lost\n\
   app.moduleDescriptionMap = "Use the Y.Map type to map key-value pairs.\n\
 ```\n\
 // Create a new Y.Map type\n\
-y.set('new map type', Y.Map).then(function (map) {\n\
+y.share.map.set('new map type', Y.Map).then(function (map) {\n\
   // Observe the map type\n\
   map.observePath(['my value'], function (value) {\n\
     console.log(\"You created a new value:\", value)\n\
@@ -74,29 +74,23 @@ y.set('new map type', Y.Map).then(function (map) {\n\
 
   app.moduleDescriptionArray = "Use the Y.Array type to handle shared lists of data.\n\
 ```\n\
-// Create a new Y.Array type\n\
-y.set('new array type', Y.Array).then(function (array) {\n\
-  // Observe the array type\n\
-  map.observe(function (events) {\n\
-    for (var i = 0; i < events.length; i++) {\n\
-      console.log(\"New event: \", events[i])\n\
-    }\n\
-  })\n\
-  array.insert(0, [1])\n\
-    // => \"New event: {type: \"Insert\", position: 0, value: 1}\"\
-  array.delete(0, 1)\n\
-    // => \"New event: {type: \"Delete\", position: 0, length: 1}\"\n\
+// Observe the array type\n\
+y.share.array.observe(function (events) {\n\
+  for (var i = 0; i < events.length; i++) {\n\
+    console.log(\"New event: \", events[i])\n\
+  }\n\
 })\n\
+y.share.array.insert(0, [1])\n\
+  // => \"New event: {type: \"Insert\", position: 0, value: 1}\"\n\
+y.share.array.delete(0, 1)\n\
+  // => \"New event: {type: \"Delete\", position: 0, length: 1}\"\n\
 ```"
 
   app.moduleDescriptionText = "Use the Y.Text type to share text content, and bind it to\n\
 arbitrary input elements (E.g. input, textarea, or any element that has the *contenteditable* property)\n\
 ```\n\
-// Create a new Y.Text type\n\
-y.set('new text type', Y.Text).then(function (text) {\n\
-  // bind text to the first p element that is contenteditable\n\
-  text.bind(document.querySelector(\"p[contenteditable]\"))\n\
-})\n\
+// bind text to the first p element that is contenteditable\n\
+y.share.text.bind(document.querySelector(\"p[contenteditable]\"))\n\
 ```"
 
   app.moduleDescriptionRichtext = "Use the Y.RichText type to share rich text, and bind it to\n\
@@ -104,26 +98,19 @@ y.set('new text type', Y.Text).then(function (text) {\n\
 \n\
 **NOTE:** This type is currently migrating and not available in yjs@1.0.*\n\
 ```\n\
-// Create a new Y.RichText type\n\
-y.set('new richtext type', Y.RichText).then(function (richtext) {\n\
-  // bind richtext to an instance of quill\n\
-  text.bind(document.querySelector(\"quill\"))\n\
-})\n\
+// bind richtext to an instance of quill\n\
+y.share.richtext.bind(document.querySelector(\"quill\"))\n\
 ```"
 
   app.moduleDescriptionSelections = "Use the Y.Selections type to share selections on Y.Array types.\n\
 \n\
 **NOTE:** This type is currently migrating and not available in yjs@1.0.*\n\
 ```\n\
-// Create a new Y.Selections type\n\
-y.set('new selections type', Y.Selections).then(function (selections) {\n\
-  // assign meaning to a selection of an array type\n\
-  y.get('new array type').then(function (array) {\n\
-    // select the first two elements and assign \"bold\" to them\n\
-    // (You can assign any string to a selection)\n\
-    selections.select(array, 0, 1, [\"bold\"])\n\
-  })\n\
-})\n\
+// choose an array on which you want to select something\n\
+var array = y.share.array\n\
+// select the first two elements and assign \"bold\" to them\n\
+// (You can assign any string to a selection)\n\
+y.share.selections.select(array, 0, 1, [\"bold\"])\n\
 ```"
 
   app.moduleDescriptionXml = "Use the Y.Xml type to share XML content, and bind it to\n\
@@ -131,13 +118,10 @@ the the browser DOM to observe the real-time changes\n\
 \n\
 **NOTE:** This type is currently migrating and not available in yjs@1.0.*\n\
 ```\n\
-// Create a new Y.Xml type\n\
-y.set('new xml type', Y.Xml).then(function (xml) {\n\
-  // create a DOM double binding\n\
-  var shared_dom = xml.getDOM()\n\
-  // and append it to the body\n\
-  text.bind(document.body.append(shared_dom))\n\
-})\n\
+// create a DOM double binding\n\
+var shared_dom = y.share.xml.getDOM()\n\
+// and append it to the body\n\
+document.body.append(shared_dom)\n\
 ```"
 
   function createBlogpostDefinition (date, name) {
