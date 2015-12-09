@@ -221,6 +221,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </g>
                 </svg>
               </paper-card>
+              <paper-card elevation="1" heading="Chat">
+                <style>
+                  #chat p span {
+                    color: blue;
+                  }
+                </style>
+                <paper-dialog class="code-overlay" entry-animation="scale-up-animation"
+                              exit-animation="scale-down-animation" opened="{{examplesChatSource}}">
+                  <paper-dialog-scrollable>
+                    <mark-down text="```&#10;{{examplesChatSourceCode}}&#10;```"></mark-down>
+                  </paper-dialog-scrollable>
+                </paper-dialog>
+                <iron-ajax
+                  auto
+                  url="bower_components/yjs/Examples/Chat/index.js"
+                  handle-as="text"
+                  last-response="{{examplesChatSourceCode}}"></iron-ajax>
+                <paper-fab icon="code" class="card-action" toggles="true" active="{{examplesChatSource}}"></paper-fab>
+                <div class="card-content">
+                  <div id="chat"></div>
+                  <form id="chatform">
+                    <input name="username" type="text" style="width:15%;">
+                    <input name="message" type="text" style="width:60%;">
+                    <input type="submit" value="Send">
+                  </form>
+                </div>
+              </paper-card>
             </section>
             <section data-route="tutorial">
               <paper-card elevation="1" heading="Tutorial">

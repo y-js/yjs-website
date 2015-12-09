@@ -162,10 +162,13 @@ document.body.append(shared_dom)\n\
     }
     var textareascript = document.createElement('script')
     var jigsawscript = document.createElement('script')
+    var chatscript = document.createElement('script')
     textareascript.src = './bower_components/yjs/Examples/Textarea/index.js'
     jigsawscript.src = './bower_components/yjs/Examples/Jigsaw/index.js'
+    chatscript.src = './bower_components/yjs/Examples/Chat/index.js'
     document.head.appendChild(textareascript)
     document.head.appendChild(jigsawscript)
+    document.head.appendChild(chatscript)
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
