@@ -160,6 +160,12 @@ document.body.append(shared_dom)\n\
     } else {
       t.classList.add('tall')
     }
+    var textareascript = document.createElement('script')
+    var jigsawscript = document.createElement('script')
+    textareascript.src = './bower_components/yjs/Examples/Textarea/index.js'
+    jigsawscript.src = './bower_components/yjs/Examples/Jigsaw/index.js'
+    document.head.appendChild(textareascript)
+    document.head.appendChild(jigsawscript)
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
