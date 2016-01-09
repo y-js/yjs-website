@@ -19,6 +19,7 @@ node --harmony $(which gulp)
 All thats left to do is:
 * Download Yjs, and the modules you want to use via bower, npm, or zip
   * In this tutorial we will use the `y-memory`, `y-websockets-client`, `y-array`, `y-map`, and `y-text` modules
+  * For testing you can use the default connection point for `y-websockets-client`. For productive systems I recommend to set up your own installation(see [here](https://github.com/y-js/y-websockets-server)).
 * Include Yjs in your app via (E.g. via `<script>` tag)
 
 ##### Include with bower
