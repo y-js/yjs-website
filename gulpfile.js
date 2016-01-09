@@ -23,7 +23,6 @@ var glob = require('glob')
 var historyApiFallback = require('connect-history-api-fallback')
 var packageJson = require('./package.json')
 var crypto = require('crypto')
-var polybuild = require('polybuild')
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -183,7 +182,12 @@ gulp.task('html', function () {
 // scripts and CSS for you.
 gulp.task('vulcanize', function () {
   return gulp.src('dist/index.html')
-    .pipe(polybuild({maximumCrush: true}))
+    // .pipe(polybuild({maximumCrush: true}))
+    .pipe($.vulcanize({
+      stripComments: true,
+      inlineCss: true,
+      inlineScripts: true
+    }))
     .pipe(gulp.dest('dist/'))
 })
 
