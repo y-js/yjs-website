@@ -25,7 +25,7 @@ All thats left to do is:
 ##### Include with bower
 ```
 npm install -g bower
-bower install y-js/{yjs,y-memory,y-websockets-client,y-array,y-map,y-text}
+bower install yjs y-memory y-websockets-client y-array y-map y-text
 ```
 
 ##### Include with npm
