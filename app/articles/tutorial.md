@@ -127,7 +127,7 @@ You can manage arrays with this type.
 
 Create a new y-list, and apply changes to it:
 ```
-y.share.map.val("list", Y.List).then(function (list) {
+y.share.map.set("list", Y.List).then(function (list) {
   // insert four elements at position 0
   list.insert(0, [1,2,3,4])
   // retrieve an element
