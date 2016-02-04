@@ -96,21 +96,9 @@ y.share.text.bind(document.querySelector(\"p[contenteditable]\"))\n\
   app.moduleDescriptionRichtext = "Use the Y.RichText type to share rich text, and bind it to\n\
   the [quill editor](http://quilljs.com/).\n\
 \n\
-**NOTE:** This type is currently migrating and not available in yjs@1.0.*\n\
 ```\n\
 // bind richtext to an instance of quill\n\
 y.share.richtext.bind(document.querySelector(\"quill\"))\n\
-```"
-
-  app.moduleDescriptionSelections = "Use the Y.Selections type to share selections on Y.Array types.\n\
-\n\
-**NOTE:** This type is currently migrating and not available in yjs@1.0.*\n\
-```\n\
-// choose an array on which you want to select something\n\
-var array = y.share.array\n\
-// select the first two elements and assign \"bold\" to them\n\
-// (You can assign any string to a selection)\n\
-y.share.selections.select(array, 0, 1, [\"bold\"])\n\
 ```"
 
   app.moduleDescriptionXml = "Use the Y.Xml type to share XML content, and bind it to\n\
@@ -160,18 +148,17 @@ document.body.append(shared_dom)\n\
     } else {
       t.classList.add('tall')
     }
-    var textareascript = document.createElement('script')
-    var richtextscript = document.createElement('script')
-    var jigsawscript = document.createElement('script')
-    var chatscript = document.createElement('script')
-    textareascript.src = './bower_components/yjs/Examples/Quill/index.js'
-    richtextscript.src = './bower_components/yjs/Examples/Textarea/index.js'
-    jigsawscript.src = './bower_components/yjs/Examples/Jigsaw/index.js'
-    chatscript.src = './bower_components/yjs/Examples/Chat/index.js'
-    document.head.appendChild(textareascript)
-    document.head.appendChild(richtextscript)
-    document.head.appendChild(jigsawscript)
-    document.head.appendChild(chatscript)
+    function loadScript (url) {
+      var tag = document.createElement('script')
+      tag.src = url
+      document.head.appendChild(tag)
+    }
+
+    loadScript('./bower_components/yjs/Examples/Textarea/index.js')
+    loadScript('./bower_components/yjs/Examples/Jigsaw/index.js')
+    loadScript('./bower_components/yjs/Examples/Chat/index.js')
+    loadScript('./bower_components/yjs/Examples/Ace/index.js')
+    loadScript('./bower_components/yjs/Examples/Quill/index.js')
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
@@ -217,7 +204,6 @@ document.body.append(shared_dom)\n\
     document.getElementById('mainContainer').scrollTop = 0;
   };
 
-
   app.getMainMode = function (isMobile) {
     return isMobile ? 'scroll' : 'cover'
   }
@@ -241,6 +227,21 @@ document.body.append(shared_dom)\n\
       tb.classList.add('tall')
     }
   }
+
+  var loadAnatomyIframeToken = false
+  app.loadAnatomyIframe = function loadAnatomyIframe () {
+    if (!loadAnatomyIframeToken) {
+      loadAnatomyIframeToken = true
+      var container = document.querySelector('#putAnatomyIframeHere')
+      while (container.children[0] != null) {
+        container.children[0].remove()
+      }
+      var iframe = document.createElement('iframe')
+      iframe.setAttribute('src', 'http://dbis.rwth-aachen.de/3dnrt/yjs_demo/')
+      container.appendChild(iframe)
+    }
+  }
+
 
   app.topologyTotal = {
     "nodes":[

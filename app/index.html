@@ -53,6 +53,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script src="../bower_components/d3/d3.min.js"></script>
   <script src="../bower_components/quill/dist/quill.js"></script>
   <link rel="stylesheet" href="../bower_components/quill/dist/quill.snow.css" />
+  <script src="../bower_components/ace-builds/src/ace.js"></script>
+  <script src="../bower_components/ace-builds/src/mode-javascript.js"></script>
+  <script src="../bower_components/ace-builds/src/theme-chrome.js"></script>
 
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
@@ -405,6 +408,61 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </div>
                 </div>
               </paper-card>
+              <paper-card elevation="1" heading="Ace Code Editor" style="padding-left:0; padding-right:0;padding-bottom:0;">
+                <style>
+                  #ace { 
+                    height: 500px;
+                    width: 100%;
+                  }
+                  .inserted {
+                    position:absolute;
+                    z-index:20;
+                    background-color: #FFC107;
+                  }
+                  .deleted {
+                    position:absolute;
+                    z-index:20;
+                    background-color: #FFC107;
+                  }
+                </style>
+                <paper-dialog class="code-overlay" entry-animation="scale-up-animation"
+                              exit-animation="scale-down-animation" opened="{{examplesAceBindSource}}">
+                  <paper-dialog-scrollable>
+                    <mark-down text="```&#10;{{examplesAceBindSourceCode}}&#10;```"></mark-down>
+                  </paper-dialog-scrollable>
+                </paper-dialog>
+                <iron-ajax
+                  auto
+                  url="bower_components/yjs/Examples/Ace/index.js"
+                  handle-as="text"
+                  last-response="{{examplesAceBindSourceCode}}"></iron-ajax>
+                <paper-fab icon="code" class="card-action" toggles="true" active="{{examplesAceBindSource}}"></paper-fab>
+                <div>
+                  <div id="ace"></div>
+                </div>
+              </paper-card>
+              <paper-card elevation="1" heading="" style="padding-left:0; padding-right:0;padding-bottom:0;">
+                <h1 style="padding-left:16px;padding-right:16px;margin-bottom:0;font-size:24px;font-weight:400;"><a target="_blank" href="http://dbis.rwth-aachen.de/3dnrt/Anatomy2.0/src/views/welcome.php">Anatomy 2.0</a></h1>
+                <style>
+                  #putAnatomyIframeHere { 
+                    height: 400px;
+                    width: 100%;
+                  }
+                  #putAnatomyIframeHere iframe {
+                    height:100%;
+                    width:100%;
+                    border:none;
+                  }
+                  .unclicked {
+                    background: gray;
+                  }
+                </style>
+                <div>
+                  <div id="putAnatomyIframeHere" class="layout vertical">
+                    <paper-button raised on-tap="loadAnatomyIframe" style="top:100px; background-color: #FF5252;">Load Demo</paper-button>
+                  </div>
+                </div>
+              </paper-card>
               <div style="height:25em;"></div>
             </section>
             <section data-route="tutorial">
@@ -506,13 +564,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionRichtext}}"></mark-down>
-              </paper-card>
-
-              <paper-card elevation="1" heading="Y.Selections Type">
-                <a href="https://github.com/y-js/y-selections" target="_blank">
-                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
-                </a>
-                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionSelections}}"></mark-down>
               </paper-card>
 
               <paper-card elevation="1" heading="Y.Xml Type">
