@@ -55,7 +55,7 @@ Y({
     text: 'Text',  // y.share.text is of type Y.Text
     map: 'Map',    // y.share.map is of type Y.Map
     array: 'Array' // y.share.array is of type Y.Array
-  }
+  },
   sourceDir: '/bower_components' // where the modules are
 }).then(function (y) {
   // y holds all the information about the shared object
