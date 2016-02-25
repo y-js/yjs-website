@@ -208,6 +208,10 @@ document.body.append(shared_dom)\n\
     return isMobile ? 'scroll' : 'cover'
   }
 
+  if (app.properties == null) {
+    app.properties = {}
+  }
+
   app.properties._isMobile = {
     type: String,
     notify: true,
