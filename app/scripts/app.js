@@ -104,7 +104,6 @@ y.share.richtext.bind(document.querySelector(\"quill\"))\n\
   app.moduleDescriptionXml = "Use the Y.Xml type to share XML content, and bind it to\n\
 the the browser DOM to observe the real-time changes\n\
 \n\
-**NOTE:** This type is currently migrating and not available in yjs@1.0.*\n\
 ```\n\
 // create a DOM double binding\n\
 var shared_dom = y.share.xml.getDOM()\n\
@@ -206,6 +205,10 @@ document.body.append(shared_dom)\n\
 
   app.getMainMode = function (isMobile) {
     return isMobile ? 'scroll' : 'cover'
+  }
+
+  if (app.properties == null) {
+    app.properties = {}
   }
 
   app.properties._isMobile = {
