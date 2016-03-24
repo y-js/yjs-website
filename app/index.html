@@ -451,6 +451,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </div>
               </paper-card>
               <paper-card elevation="1" heading="" style="padding-left:0; padding-right:0;padding-bottom:0;">
+                <h1 style="padding-left:16px;padding-right:16px;margin-bottom:0;font-size:24px;font-weight:400;"><a target="_blank" href="https://github.com/Mari0/example-yjs-requirejs-vis">Vis.js Network Example</a></h1>
+                <style>
+                  #putNetworkIframeHere { 
+                    height: 400px;
+                    width: 100%;
+                  }
+                  #putNetworkIframeHere iframe {
+                    height:100%;
+                    width:100%;
+                    border:none;
+                  }
+                  .unclicked {
+                    background: gray;
+                  }
+                </style>
+                <div>
+                  <div id="putNetworkIframeHere" class="layout vertical">
+                    <paper-button raised on-tap="loadNetworkIframe" style="top:100px; background-color: #FF5252;">Load Demo</paper-button>
+                  </div>
+                </div>
+              </paper-card>
+              <paper-card elevation="1" heading="" style="padding-left:0; padding-right:0;padding-bottom:0;">
                 <h1 style="padding-left:16px;padding-right:16px;margin-bottom:0;font-size:24px;font-weight:400;"><a target="_blank" href="http://dbis.rwth-aachen.de/3dnrt/Anatomy2.0/src/views/welcome.php">Anatomy 2.0</a></h1>
                 <style>
                   #putAnatomyIframeHere { 
@@ -470,6 +492,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <div id="putAnatomyIframeHere" class="layout vertical">
                     <paper-button raised on-tap="loadAnatomyIframe" style="top:100px; background-color: #FF5252;">Load Demo</paper-button>
                   </div>
+                </div>
+              </paper-card>
+              <paper-card elevation="1" heading="More Examples">
+                <div class="card-content">
+                  <ul>
+                    <li><a href="xml-example.html" target="_blank">Xml Example</a></li>
+                  </ul>
                 </div>
               </paper-card>
               <div style="height:25em;"></div>

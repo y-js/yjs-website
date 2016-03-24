@@ -231,6 +231,20 @@ document.body.append(shared_dom)\n\
     }
   }
 
+  var loadNetworkIframeToken = false
+  app.loadNetworkIframe = function loadAnatomyIframe () {
+    if (!loadNetworkIframeToken) {
+      loadNetworkIframeToken = true
+      var container = document.querySelector('#putNetworkIframeHere')
+      while (container.children[0] != null) {
+        container.children[0].remove()
+      }
+      var iframe = document.createElement('iframe')
+      iframe.setAttribute('src', 'http://mari0.github.io/example-yjs-requirejs-vis/')
+      container.appendChild(iframe)
+    }
+  }
+
   var loadAnatomyIframeToken = false
   app.loadAnatomyIframe = function loadAnatomyIframe () {
     if (!loadAnatomyIframeToken) {

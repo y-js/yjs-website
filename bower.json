@@ -21,7 +21,9 @@
     "y-map": "^8.0.1",
     "y-webrtc": "^8.0.1",
     "y-memory": "^8.0.1",
-    "y-websockets-client": "^8.0.1"
+    "y-websockets-client": "^8.0.1",
+    "jquery": "~2.2.2",
+    "y-xml": "~8.0.1"
   },
   "devDependencies": {
     "web-component-tester": "*",
