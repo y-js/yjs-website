@@ -417,6 +417,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </div>
                 </div>
               </paper-card>
+              <paper-card elevation="1" heading="Drawing">
+                <paper-dialog class="code-overlay" entry-animation="scale-up-animation"
+                              exit-animation="scale-down-animation" opened="{{examplesDrawingSource}}">
+                  <paper-dialog-scrollable>
+                    <mark-down text="```&#10;{{examplesDrawingSourceCode}}&#10;```"></mark-down>
+                  </paper-dialog-scrollable>
+                </paper-dialog>
+                <iron-ajax
+                  auto
+                  url="bower_components/yjs/Examples/Drawing/index.js"
+                  handle-as="text"
+                  last-response="{{examplesDrawingSourceCode}}"></iron-ajax>
+                <paper-fab icon="code" class="card-action" toggles="true" active="{{examplesDrawingSource}}"></paper-fab>
+                  <style>
+                    #drawingCanvas path {
+                      fill: none;
+                      stroke: blue;
+                      stroke-width: 1px;
+                      stroke-linejoin: round;
+                      stroke-linecap: round;
+                    }
+                  </style>
+                  <button type="button" id="clearDrawingCanvas">Clear Drawing</button>
+                  <svg id="drawingCanvas" viewbox="0 0 100 100" width="100%"></svg>
+              </paper-card>
               <paper-card elevation="1" heading="Ace Code Editor" style="padding-left:0; padding-right:0;padding-bottom:0;">
                 <style>
                   #ace { 
@@ -451,28 +476,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </div>
               </paper-card>
               <paper-card elevation="1" heading="" style="padding-left:0; padding-right:0;padding-bottom:0;">
-                <h1 style="padding-left:16px;padding-right:16px;margin-bottom:0;font-size:24px;font-weight:400;"><a target="_blank" href="https://github.com/Mari0/example-yjs-requirejs-vis">Vis.js Network Example</a></h1>
-                <style>
-                  #putNetworkIframeHere { 
-                    height: 400px;
-                    width: 100%;
-                  }
-                  #putNetworkIframeHere iframe {
-                    height:100%;
-                    width:100%;
-                    border:none;
-                  }
-                  .unclicked {
-                    background: gray;
-                  }
-                </style>
-                <div>
-                  <div id="putNetworkIframeHere" class="layout vertical">
-                    <paper-button raised on-tap="loadNetworkIframe" style="top:100px; background-color: #FF5252;">Load Demo</paper-button>
-                  </div>
-                </div>
-              </paper-card>
-              <paper-card elevation="1" heading="" style="padding-left:0; padding-right:0;padding-bottom:0;">
                 <h1 style="padding-left:16px;padding-right:16px;margin-bottom:0;font-size:24px;font-weight:400;"><a target="_blank" href="http://dbis.rwth-aachen.de/3dnrt/Anatomy2.0/src/views/welcome.php">Anatomy 2.0</a></h1>
                 <style>
                   #putAnatomyIframeHere { 
@@ -498,6 +501,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="card-content">
                   <ul>
                     <li><a href="xml-example.html" target="_blank">Xml Example</a></li>
+                    <li><a href="http://mari0.github.io/example-yjs-requirejs-vis/" target="_blank">Vis.js Example</a> - <a href="https://github.com/Mari0/example-yjs-requirejs-vis" target="_blank">&lt;Source Code&gt;</a>
+                    <li><a href="https://github.com/y-js/latex-editor">Latex Editor</a>
                   </ul>
                 </div>
               </paper-card>
