@@ -73,8 +73,8 @@ Finally, `y.share` holds the shared data. We specified three shared types (Y.Tex
 # Yjs types
 In the Yjs project, we strongly distinguish between *data type* and *data structure*.
 Yjs knows how to handle concurrency on several data structures like Hash-Maps, Trees, Lists and Graphs.
-You can create arbitrary data types with these types. In the [modules section](/modules)
-we list a bunch of types that you can use in your project, and we show how to create your own types.
+You can create arbitrary data types with the given structures. In the [modules section](/modules)
+we list a bunch of useful types that you can use in your projects, but it is also possible to create your own types.
 
 ### Y.Map type
 Lets manipulate some of the properties of the `y.share.map` type.
