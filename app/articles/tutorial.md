@@ -125,16 +125,16 @@ You can manage arrays with this type.
 
 ### Insert / Delete Elements
 
-Create a new y-list, and apply changes to it:
+Create a new Y.Array, and apply changes to it:
 ```
-y.share.map.set("list", Y.List).then(function (list) {
+y.share.map.set("array", Y.Array).then(function (array) {
   // insert four elements at position 0
-  list.insert(0, [1,2,3,4])
+  array.insert(0, [1,2,3,4])
   // retrieve an element
-  console.log(list.get(1)) // => 2
-  // retrieve the list as an array
-  console.log(list.getArray()) // => [1,2,3,4]
+  console.log(array.get(1)) // => 2
+  // retrieve the Y.Array values as an array
+  console.log(array.toArray()) // => [1,2,3,4]
 })
 
 ```
-Y.List throws *insert* and *delete* events. Set an observer on the `list` and repeat the previous example.
+Y.Array throws *insert* and *delete* events. Set an observer on the `array` and repeat the previous example.
