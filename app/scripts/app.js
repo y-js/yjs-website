@@ -51,39 +51,44 @@ your changes will still be there.\n\
 * Makes offline editing possible\n\
 * Not supported by all browsers"
 
+app.moduleDescriptionLeveldb = "Use the LevelDB database adapter to store your shared data persistently \
+in node applications. The changes persist after restart.\
+\n\
+\n\
+* Low memory usage\n\
+* Save changes on a file system"
+
   app.moduleDescriptionMemory = "Use the Memory database adapter to store your shared data\n\
 efficiently in-memory. The next time you join the session,\n\
 your changes will be lost\n\
 \n\
-* Supported by all browsers"
+* Supported by all browsers\n\
+* Fast"
 
   app.moduleDescriptionMap = "Use the Y.Map type to map key-value pairs.\n\
 ```\n\
 // Create a new Y.Map type\n\
-y.share.map.set('new map type', Y.Map).then(function (map) {\n\
-  // Observe the map type\n\
-  map.observePath(['my value'], function (value) {\n\
-    console.log(\"You created a new value:\", value)\n\
-  })\n\
-  // Now we create a new property\n\
-  map.set('my value', 42) // => \"You created a new value: 42\"\n\
-  // And retrieve the value\n\
-  map.get('my value') // => 42\n\
+var map = y.share.map.set('new map type', Y.Map)\n\
+// Observe the map type\n\
+map.observePath(['my value'], function (value) {\n\
+  console.log(\"You created a new value:\", value)\n\
 })\n\
+// Now we create a new property\n\
+map.set('my value', 42) // => \"You created a new value: 42\"\n\
+// And retrieve the value\n\
+map.get('my value') // => 42\
 ```"
 
   app.moduleDescriptionArray = "Use the Y.Array type to handle shared lists of data.\n\
 ```\n\
 // Observe the array type\n\
-y.share.array.observe(function (events) {\n\
-  for (var i = 0; i < events.length; i++) {\n\
-    console.log(\"New event: \", events[i])\n\
-  }\n\
+y.share.array.observe(function (event) {\n\
+  console.log(\"New event: \", event)\n\
 })\n\
 y.share.array.insert(0, [1])\n\
-  // => \"New event: {type: \"Insert\", position: 0, value: 1}\"\n\
+  // => \"New event: {type: \"Insert\", index: 0, values: [1]}\"\n\
 y.share.array.delete(0, 1)\n\
-  // => \"New event: {type: \"Delete\", position: 0, length: 1}\"\n\
+  // => \"New event: {type: \"Delete\", position: 0, oldValues: [1]}\"\n\
 ```"
 
   app.moduleDescriptionText = "Use the Y.Text type to share text content, and bind it to\n\

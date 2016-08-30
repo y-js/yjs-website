@@ -101,10 +101,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Modules</span>
           </a>
 
-          <a data-route="blog" href="/blog" on-click="onDataRouteClick">
+          <!--a data-route="blog" href="/blog" on-click="onDataRouteClick">
             <iron-icon icon="av:library-books"></iron-icon>
             <span>Blog</span>
-          </a>
+          </a-->
 
           <a href="https://github.com/y-js/yjs/wiki" target="_blank">
             <iron-icon icon="icons:explore"></iron-icon>
@@ -156,7 +156,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-card>
             </section>
 
-            <section data-route="article">
+            <!--section data-route="article">
               <paper-card elevation="1" heading="{{blogpostUrlToName(articleUrl)}}">
                 <iron-ajax
                   auto
@@ -165,7 +165,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   last-response="{{articleMd}}"></iron-ajax>
                 <mark-down class="card-content" text="{{articleMd}}"></mark-down>
               </paper-card>
-            </section>
+            </section-->
 
             <section data-route="examples">
               <paper-card elevation="1">
@@ -519,7 +519,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <mark-down class="card-content" text="{{tutorialMd}}"></mark-down>
               </paper-card>
             </section>
-            <section data-route="blog">
+            <!--section data-route="blog">
               <paper-card elevation="1" heading="Blog posts">
                 <style>
                 .list {
@@ -545,7 +545,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </template>
                 </div>
               </paper-card>
-            </section>
+            </section-->
             <section data-route="modules">
               <paper-card elevation="1" heading="Webrtc Connector">
                 <a href="https://github.com/y-js/y-webrtc" target="_blank">
@@ -575,6 +575,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
                 </a>
                 <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionIndexeddb}}"></mark-down>
+              </paper-card>
+
+              <paper-card elevation="1" heading="LevelDB Database Adapter">
+                <a href="https://github.com/y-js/y-leveldb" target="_blank">
+                  <paper-fab src="images/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="card-action"></paper-fab>
+                </a>
+                <mark-down class="card-content" style="margin:0;padding:0;" text="{{moduleDescriptionLeveldb}}"></mark-down>
               </paper-card>
 
               <paper-card elevation="1" heading="Memory Database Adapter">
