@@ -91,7 +91,7 @@ var optimizeHtmlTask = function (src, dest) {
     .pipe($.size({title: 'html'}))
 }
 
-gulp.task('deploy', [], function () {
+gulp.task('deploy', ['default'], function () {
   return gulp.src('./dist/**/*')
     .pipe($.ghPages({
       remoteUrl: 'https://github.com/y-js/y-js.github.io.git',

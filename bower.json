@@ -10,20 +10,8 @@
     "paper-elements": "PolymerElements/paper-elements#^1.0.1",
     "platinum-elements": "PolymerElements/platinum-elements#^1.1.0",
     "polymer": "Polymer/polymer#^1.1.0",
-    "quill": "~0.20.1",
     "ace-builds": "~1.2.3",
-    "yjs": "^11.0.0",
-    "y-xmpp": "^7.0.0",
-    "y-array": "^9.0.0",
-    "y-richtext": "^8.0.0",
-    "y-indexeddb": "^8.0.1",
-    "y-text": "^9.0.0",
-    "y-map": "^9.0.0",
-    "y-webrtc": "^8.0.1",
-    "y-memory": "^8.0.1",
-    "y-websockets-client": "^8.0.1",
-    "jquery": "~2.2.2",
-    "y-xml": "^9.0.0"
+    "jquery": "~2.2.2"
   },
   "devDependencies": {
     "web-component-tester": "*",
