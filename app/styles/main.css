@@ -16,3 +16,8 @@ body {
 ul {
   padding-left: 1.3em;
 }
+
+.title-text {
+  font-weight: 600!important;
+  font-size: 27px!important;
+}
